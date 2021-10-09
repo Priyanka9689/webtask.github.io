@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Form </title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+		background:url("best1.jpg")center no-repeat;
+		height: 80vh;
+		background-size: cover;
+	}
+	div.text{
+		width: 400px;
+		margin:200px auto 0px auto;
+
+	}
+	h2{
+		text-align: center;
+		padding:20px;
+		font-family: sans-serif;
+		margin-top: 20px
+	}
+	div.main{
+		background-color: rgba(0,0,0,0.5);
+		width:100%;
+		font-size: 18px;
+		border-radius: 20px;
+		border:1px solid rgba(255,255,255,0.3);
+		box-shadow:2px 2px 15px rgba(0,0,0,0.3);
+		color:#fff;
+
+	}
+	#register{
+		margin:40px;
+	}
+	
+	input{
+		width:180px;
+		border:1px solid #ddd;
+		border-radius:3px;
+		outline:0;
+		padding:5px;
+		background-color: #fff;
+		*box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);*
+	}
+	#MobileNo{
+		width:50px;
+		padding:5px;
+	}
+	select{
+		width:55px;
+		padding:5px;
+	}
+	input#submit{
+		width:100px;
+		padding:10px;
+		font-size:16px;
+		font-family: sans-serif;
+		font-weight: 600;
+		border-radius: 5px;
+		background-color:rgba(100,200,0,0.8);
+		color:#fff;
+		cursor: pointer;
+		border:1px solid rgba(255,255,255,0.3);
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+		margin-top: 20px;
+
+	}
+	td{
+		color:white;
+		font-family: italic;
+		font-size:16px;
+		font-weight: bold;
+	}
+	h2{
+		text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+		
+	}
+	span{
+		color:yellow;
+		font-size:16px;
+
+	}
+
+	
+	</style>
+</head>
+<body>
+	<div class="text">
+	<div class ="main">
+		<h2> Form </h2>
+		<form id="register" name="myForm"  method="Post" onsubmit="return myfun()">
+			<table>
+		<tr><td>Full Name:</td>
+		<td><input type="text" name="fname" id="User_Name" placeholder="Name" autocomplete="off">
+		<br><span id="Message"></span>
+		</td>
+	</tr>
+	
+		<tr><td>Email Id  :  </td>
+		<td><input type="email" name="email" id="emailsss" placeholder="Email" autocomplete=off>
+			<br><span id="register"></span></td>
+		</tr>
+	
+
+		<tr>
+		<td>Mobile No:</td>
+		<td><select>
+			<option></option>
+			<option>650</option>
+			<option>850</option>
+			<option>950</option>
+		</select>
+		<select>
+			<option></option>
+			<option>021</option>
+			<option>048</option>
+			<option>026</option>
+		</select>
+		<input type="text" name="abc" id="MobileNo"placeholder="" size='4'>
+		<br><span id="main"></span></td>
+	</tr>
+	
+	<tr>
+
+	 <td><input type="Submit" value="Submit" id="submit"/></td>
+	</tr>
+</table>
+	</form>
+	
+</div>
+</div>
+<script>
+	
+	function myfun(){
+		var correct_way=/^[A-Za-z]+$/;
+		
+		var user = document.getElementById("User_Name").value;
+		if(user==""){
+			document.getElementById("Message").innerHTML="*Please fill the Name field*";
+			return false;
+		}
+			if(user.length<4)
+			{
+				document.getElementById("Message").innerHTML="*Name must be 4 char*";
+				return false;
+			}
+			
+		if(user.match(correct_way))
+			true;
+		else{
+			document.getElementById("Message").innerHTML="*only alphabets are allowed";
+			return false;
+		}
+	
+
+		var emailid=document.myForm.Email.value;
+if(emailid.indexOf('@')<=0){
+	document.getElementById("register").innerHTML="*Invalid @ position";
+	return false;
+}
+if((emaild.charAt(emailid.length-4)!='.')&&(emailid.charAt(emailid.length-3)!='.')){
+document.getElementById("register").innerHTML="**invalid Emailid"
+return false;
+}
+
+var no=document.getElementById("MobileNo");
+if(no==650021);{
+
+document.getElementById("main").innerHTML="Jio,Maharashtra,jio.jpg";
+return false;
+}
+if(no==750048);{
+document.getElementById("main").innerHTML="Idea,Kerala,idea.jpg"
+return false;
+}
+if(no==850026);{
+	document.getElementById("main").innerHTML="vodaphone,gujrat,vodaphone.jpg"
+	return false;
+}
+
+	 }
+
+	
+</script>
+</body>
+</html>
